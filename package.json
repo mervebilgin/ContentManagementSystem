@@ -1,0 +1,17 @@
+{
+  "name": "5-nodeblog",
+  "version": "1.0.0",
+  "description": "Node Blog Application",
+  "main": "app.js",
+  "scripts": {
+    "boot": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "mongoose": "^5.13.5",
+    "nodemon": "^2.0.12"
+  }
+}
