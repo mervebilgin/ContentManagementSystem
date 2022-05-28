@@ -3,6 +3,7 @@ const router = express.Router()
 const Post = require('../models/Post')
 const path = require('path')
 const Category = require('../models/Category')
+const User = require('../models/User')
 
 router.get('/new', (req, res) => {
     if(!req.session.userId) {
@@ -15,8 +16,10 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-    Post.findById(req.params.id).lean().then(post => {
-        res.render('site/post', {post:post})
+    Post.findById(req.params.id).populate({path: 'author', model: User}).lean().then(post => {
+        Category.find({}).lean().then(categories => {
+            res.render('site/post', {post:post, categories: categories})
+        })
     })  
 
 })

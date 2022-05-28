@@ -18,7 +18,7 @@
 						</div>
 						<div class="blog-content">
 							<ul class="blog-meta">
-								<li><i class="fas fa-user"></i>John Doe</li>
+								<li><i class="fas fa-user"></i>{{post.author.username}}</li>
 								<li><i class="fas fa-clock"></i>{{ generateDate post.date 'MMM DD YYYY'}}</li>
 								<li><i class="fas fa-comments"></i>57</li>
 							</ul>
@@ -71,16 +71,9 @@
                     
                     
 					<!-- Category -->
-					<div class="widget">
-						<h3 class="mb-3">Category</h3>
-						<div class="widget-category">
-							<a href="#">Web Design<span>(7)</span></a>
-							<a href="#">Marketing<span>(142)</span></a>
-							<a href="#">Web Development<span>(74)</span></a>
-							<a href="#">Branding<span>(60)</span></a>
-							<a href="#">Photography<span>(5)</span></a>
-						</div>
-					</div>
+					
+					{{> site-sidebar}}
+					
 					<!-- /Category -->
 
 					<!-- Posts sidebar -->
