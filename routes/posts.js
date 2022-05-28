@@ -2,13 +2,15 @@ const express = require('express')
 const router = express.Router()
 const Post = require('../models/Post')
 const path = require('path')
+const Category = require('../models/Category')
 
 router.get('/new', (req, res) => {
-    if(req.session.userId) {
-        return res.render('site/addpost')
-    }else {
-        res.redirect('/users/login')
+    if(!req.session.userId) {
+        return res.redirect('users/login')
     }
+    Category.find({}).lean().then(categories => {
+        res.render('site/addpost', {categories: categories})
+    })
 })
 
 router.get('/:id', (req, res) => {

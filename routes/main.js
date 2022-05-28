@@ -12,10 +12,9 @@ router.get('/', (req, res) => {
 router.get('/blog', (req, res) => {
 
     Post.find({}).sort({$natural:-1}).lean().then(posts => {
-        res.render('site/blog', {posts:posts})
-        /* Category.find({}).then(categories => {
+        Category.find({}).lean().then(categories => {
             res.render('site/blog', {posts:posts, categories: categories})
-        }) */
+        })
     }) 
 })
 
