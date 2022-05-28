@@ -1,0 +1,56 @@
+
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->	
+<section class="page-image page-image-contact md-padding">
+    <h1 class="text-white text-center">ADD POST</h1>
+</section>
+    
+    <!--==========================
+    Contact Section
+============================-->
+<section id="contact" class="md-padding">
+	<div class="container">
+
+			<div class="row text-center">
+				<div class="col-md-4 offset-md-4">
+					<div class="section-header">
+						<h2 class="title">Add Post</h2>
+					</div>
+				</div>
+			</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<form action="/posts/test" method="POST" enctype="multipart/form-data"> 
+				<!--enctype="multipart/form-data" dosyaları post metoduyla göndermemize yarar-->
+					<div class="row">
+						<div class="offset-2 col-md-8">
+							<div class="form-group">
+								<input class="form-control" name="title" type="text" placeholder="Post Title *" required="required" data-validation-required-message="Please enter your username.">
+								<p class="help-block text-danger"></p>
+							</div>
+                            <div class="form-group">
+								<textarea class="form-control" name="content" placeholder="Your Post *" required="required" data-validation-required-message="Please enter a message."></textarea>
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group">
+								<input class="form-control" name="post_image" type="file" required="required" data-validation-required-message="Please enter a message.">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+
+						<div class="clearfix"></div>
+						<div class="col-lg-12 text-center">
+							<div id="success"></div>
+							<button class="main-btn" type="submit">Add Post</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
