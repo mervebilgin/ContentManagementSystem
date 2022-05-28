@@ -1,0 +1,64 @@
+<section class="page-image page-image-about md-padding">
+	<h1 class="text-white text-center">CATEGORIES</h1>
+</section>
+
+<!--==========================
+    ABOUTUS Section
+============================-->
+	<section id="aboutus" class="md-padding">
+		<div class="container">
+
+			{{> admin-nav}}
+
+			<div class="clearfix"></div>
+			<div class="mb-5"></div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<form action="" method="POST" enctype="multipart/form-data"> 
+					<!--enctype="multipart/form-data" dosyaları post metoduyla göndermemize yarar===-->
+					<div class="row">
+						<div class="col-md-10">
+							<div class="form-group">
+								<input class="form-control" name="name" type="text" placeholder="Category Name *" required="required" data-validation-required-message="Please enter category name.">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="clearfix"></div>
+							<div class="col-lg-12">
+								<div id="success"></div>
+								<button class="main-btn" style="margin-left: 0;" type="submit">Add Category</button>
+							</div>
+						</div>
+					</div>
+					</form>
+				</div>
+				<div class="col-md-8">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>NAME</th>
+								<th>DELETE</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each categories}}
+							<tr>
+								<td>{{_id}}</td>
+								<td>{{name}}</td>
+								<td>
+								<form action="/admin/categories/{{_id}}?_method=DELETE" method="post" >
+									<input type="hidden" name="_method" value="DELETE">
+									<button type="submit" class="btn btn-danger">Delete</button>
+								</form>
+								</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div> 
+		</div>
+	</section>
+
+	
