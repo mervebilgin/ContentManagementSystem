@@ -27,7 +27,7 @@ router.post('/categories', (req, res) => {
 })
 
 router.delete('/categories/:id', (req, res) => {
-    Category.remove({_id : req.params.id}).then(()=>{
+    Category.remove({_id : req.params.id}).lean().then(()=>{
         res.redirect('/admin/categories')
     })
 })
