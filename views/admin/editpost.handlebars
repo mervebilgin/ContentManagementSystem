@@ -15,23 +15,24 @@
 			<div class="row text-center">
 				<div class="col-md-4 offset-md-4">
 					<div class="section-header">
-						<h2 class="title">Update</h2>
+						<h2 class="title">Add Post</h2>
 					</div>
 				</div>
 			</div>
 
 		<div class="row">
 			<div class="col-lg-12">
-				<form action="/posts/test" method="POST" enctype="multipart/form-data"> 
+				<form action="/admin/posts/{{post.id}}?_method=PUT" method="POST" enctype="multipart/form-data"> 
+                <input type="hidden" name="_method" value="PUT">
 				<!--enctype="multipart/form-data" dosyaları post metoduyla göndermemize yarar-->
 					<div class="row">
 						<div class="offset-2 col-md-8">
 							<div class="form-group">
-								<input class="form-control" name="title" type="text" value="{{post.title}}" required="required" data-validation-required-message="Please enter your username.">
+								<input class="form-control" name="title" type="text" placeholder="Post Title *" required="required" data-validation-required-message="Please enter your username.">
 								<p class="help-block text-danger"></p>
 							</div>
                             <div class="form-group">
-								<textarea class="form-control" name="content" required="required" data-validation-required-message="Please enter a message.">{{post.content}}</textarea>
+								<textarea class="form-control" name="content" placeholder="Your Post *" required="required" data-validation-required-message="Please enter a message."></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
@@ -50,7 +51,7 @@
 						<div class="clearfix"></div>
 						<div class="col-lg-12 text-center">
 							<div id="success"></div>
-							<button class="main-btn" type="submit">Update Post</button>
+							<button class="main-btn" type="submit">Add Post</button>
 						</div>
 					</div>
 				</form>
