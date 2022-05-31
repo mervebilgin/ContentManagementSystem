@@ -72,11 +72,13 @@ const main = require('./routes/main')
 const posts = require('./routes/posts')
 const users = require('./routes/users')
 const admin = require('./routes/admin/index')
+const contact = require('./routes/contact')
 
 app.use('/', main)
 app.use('/posts', posts)
 app.use('/users', users)
 app.use('/admin', admin)
+app.use('/contact', contact)
 
 
 app.listen(port, hostname, () => {
